@@ -23,7 +23,7 @@ public class Category implements Serializable{
 	private Long id;
 	private String name;
 	
-//	@JsonIgnore
+	@JsonIgnore
 	@ManyToMany(mappedBy = "categories") // Name of collection variable from the otter table
 	private Set<Product> products = new HashSet<>();
 	
