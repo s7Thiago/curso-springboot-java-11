@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import com.silva.thiago.course.entities.Category;
 import com.silva.thiago.course.entities.Order;
 import com.silva.thiago.course.entities.OrderItem;
+import com.silva.thiago.course.entities.Payment;
 import com.silva.thiago.course.entities.Product;
 import com.silva.thiago.course.entities.User;
 import com.silva.thiago.course.entities.enums.OrderStatus;
@@ -79,6 +80,12 @@ public class TestConfig implements CommandLineRunner{
 		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi2, oi3, oi4));
+		
+//		Associating a payment to payed objects
+		Payment pay1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), o1);
+		o1.setPayment(pay1);
+		
+		orderRepository.save(o1);
 		
 	}
 
