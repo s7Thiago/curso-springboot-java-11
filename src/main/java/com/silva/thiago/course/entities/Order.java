@@ -16,7 +16,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.silva.thiago.course.entities.enums.OrderStatus;
 
 @Entity
